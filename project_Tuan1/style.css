@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    font-family: Quicksand, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f3f4f8;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left {
+    flex: 1.7;
+    background: #dde9fd;
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left .illustration {
+    max-width: 80%;
+    margin: 0 auto 20px;
+}
+
+.left h2 {
+    color: #5680F9;
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0;
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.left p {
+    color: #555;
+    font-family: Quicksand, sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+.right {
+    flex: 1.3;
+    background: white;
+    padding: 40px;
+    box-shadow: -5px 0 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.right h3 {
+    color: #e60023;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+form {
+    width: 569px;
+    height: 893px;
+    max-width: 420px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+form input, form select {
+    color: #8D99BB;
+    border: 1px solid #8D99BB;
+}
+
+::placeholder {
+    color: #8D99BB;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.row input,
+.row select {
+    flex: 1;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e60023;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cc0020;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #3d5af1;
+    text-decoration: none;
+}
