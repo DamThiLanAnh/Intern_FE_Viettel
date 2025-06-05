@@ -1,0 +1,5 @@
+- Sua lai logo trai
+- sua lai nhung o input o from
+- sua la kich thuoc form
+- to chuc lai code
+- doc them ve dat ten class theo chuan BEM
