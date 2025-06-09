@@ -144,11 +144,11 @@ form input, form select {
     flex: 1;
 }
 
-.row1, .row3 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-}
+/*.row {*/
+/*        display: grid;*/
+/*        grid-template-columns: 1fr 1fr;*/
+/*        gap: 10px;*/
+/*}*/
 
 input, select {
     width: 100%;
