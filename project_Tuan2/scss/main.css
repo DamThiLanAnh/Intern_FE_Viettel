@@ -17,6 +17,7 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
+  align-items: center;
   flex-direction: row;
 }
 @media (max-width: 768px) {
@@ -43,7 +44,7 @@ body {
   font-weight: 400;
   line-height: 100%;
   letter-spacing: 0;
-  font-size: 32px;
+  font-size: 2em;
   margin-bottom: 10px;
   text-align: center;
   position: absolute;
@@ -54,7 +55,7 @@ body {
 .left p {
   color: #555;
   font-family: "Quicksand, sans-serif";
-  font-size: 16px;
+  font-size: 1em;
   text-align: center;
   position: absolute;
   top: 80%;
@@ -185,6 +186,67 @@ form .form-actions {
 form .form-actions a {
   text-decoration: none;
   color: #5680f9;
+}
+
+.language-select {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #666;
+  z-index: 100;
+}
+.language-select select {
+  border: none;
+  border-radius: 6px;
+  padding: 0 8px;
+  color: #333;
+  font-family: Quicksand, sans-serif;
+  cursor: pointer;
+  margin-bottom: auto;
+}
+
+.globe-icon {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .language-select {
+    top: 15px;
+    right: 15px;
+    font-size: 12px;
+    gap: 4px;
+  }
+  .language-select select {
+    padding: 0 6px;
+  }
+  .globe-icon {
+    width: 14px;
+    height: 14px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .language-select {
+    top: 10px;
+    right: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .language-select select {
+    font-size: 12px;
+    padding: 0 4px;
+  }
+  .globe-icon {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
