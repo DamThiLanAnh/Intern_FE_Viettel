@@ -5,20 +5,20 @@
   input[type="password"],
   input[type="text"] {
     width: 100%;
-    padding: 0.5rem 2.5rem 0.5rem 0.5rem; // chừa chỗ bên phải cho icon
-    font-size: 1rem;
+    padding: 10px 40px 10px 10px; // chừa khoảng bên phải cho icon
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
 
   .toggle-password {
     position: absolute;
+    right: 10px;
     top: 50%;
-    right: 0.8rem;
     transform: translateY(-50%);
     cursor: pointer;
-    color: #666;
-    font-size: 1rem;
+    color: #888;
+    font-size: 18px;
 
     &:hover {
       color: #333;
