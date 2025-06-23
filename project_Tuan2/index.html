@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Dang nhap</title>
     <link rel="stylesheet" href="css/main.css">
 <!--    <link rel="stylesheet" href="style.css">-->
@@ -31,10 +32,14 @@
                 <label for="email"></label>
                 <input type="text" id = "email" placeholder="Nhập tài khoản" >
                 <!--password-->
-                <label for="password"></label>
-                <input type="password" id="password" placeholder="Nhập mật khẩu" >
-                <!--Con mat-->
-                <button class="hide" type="button" onclick="togglePassword()">👁️</button>
+                <div class="password-wrapper">
+                    <label for="password"></label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu" >
+                    <!--Con mat-->
+                    <span class="hide" type="button" onclick="togglePassword()">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
                 <p id="message" style="color: red; margin: 10px 10px"></p>
             </div>
             <div class="row form-actions">

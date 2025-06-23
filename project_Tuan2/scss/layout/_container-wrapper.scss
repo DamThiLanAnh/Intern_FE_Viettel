@@ -1,0 +1,27 @@
+.password-wrapper {
+  position: relative;
+  width: 100%;
+
+  input[type="password"],
+  input[type="text"] {
+    width: 100%;
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem; // chừa chỗ bên phải cho icon
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 1rem;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}

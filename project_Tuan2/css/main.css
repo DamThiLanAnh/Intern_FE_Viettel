@@ -152,6 +152,31 @@ body {
   }
 }
 
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+.password-wrapper input[type=password],
+.password-wrapper input[type=text] {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.password-wrapper .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  font-size: 1rem;
+}
+.password-wrapper .toggle-password:hover {
+  color: #333;
+}
+
 button {
   width: 100%;
   padding: 12px;
@@ -177,14 +202,9 @@ form {
 form input {
   color: #8D99BB;
   border: 1px solid #8D99BB;
-  flex: 1;
 }
 form input::placeholder {
   color: #8D99BB;
-}
-form .hide {
-  margin-left: 5px;
-  padding: 5px;
 }
 form input:not([type=checkbox]) {
   width: 100%;
