@@ -23,12 +23,19 @@
         </div>
     </div>
     <div class="right">
-        <form>
+        <form id="loginForm">
             <img src="logo/chat_platform.svg" alt="Chatbot Illustration" class="logo">
             <h3>Đăng nhập vào tài khoản của bạn</h3>
             <div class="write">
-                <input type="text" placeholder="Nhập tài khoản" required>
-                <input type="text" placeholder="Nhập mật khẩu" required>
+                <!--email-->
+                <label for="email"></label>
+                <input type="text" id = "email" placeholder="Nhập tài khoản" >
+                <!--password-->
+                <label for="password"></label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu" >
+                <!--Con mat-->
+                <button class="hide" type="button" onclick="togglePassword()">👁️</button>
+                <p id="message" style="color: red; margin: 10px 10px"></p>
             </div>
             <div class="row form-actions">
                 <div class="col">
@@ -53,5 +60,6 @@
         </div>
     </div>
 </div>
+<script src="js/login.js"></script>
 </body>
 </html>

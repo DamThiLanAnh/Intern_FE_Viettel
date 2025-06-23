@@ -177,9 +177,14 @@ form {
 form input {
   color: #8D99BB;
   border: 1px solid #8D99BB;
+  flex: 1;
 }
 form input::placeholder {
   color: #8D99BB;
+}
+form .hide {
+  margin-left: 5px;
+  padding: 5px;
 }
 form input:not([type=checkbox]) {
   width: 100%;

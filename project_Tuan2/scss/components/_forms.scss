@@ -10,12 +10,16 @@ form {
   input {
     color: $gray-color;
     border: 1px solid $gray-color;
-
+    flex: 1;
     &::placeholder {
       color: $gray-color;
     }
   }
 
+  .hide {
+    margin-left: 5px;
+    padding: 5px;
+  }
   input:not([type='checkbox']) {
     width: 100%;
     padding: 10px;
