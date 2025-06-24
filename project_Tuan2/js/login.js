@@ -22,7 +22,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         return;
     }
 
-    // Giả lập xác thực đúng (có thể thay bằng fetch API gửi tới server)
+    // Giả lập xác thực đúng
     if (email === "test@example.com" && password === "123456") {
         messageEl.style.color = "green";
         messageEl.textContent = "Đăng nhập thành công!";
