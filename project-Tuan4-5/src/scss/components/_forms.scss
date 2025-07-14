@@ -1,0 +1,47 @@
+@use "../base/variables" as *;
+form {
+  max-width: 420px;
+  padding: 20px;
+  margin-right: 100px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+
+  input {
+    color: $gray-color;
+    border: 1px solid $gray-color;
+    &::placeholder {
+      color: $gray-color;
+    }
+  }
+
+  input:not([type='checkbox']) {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+  }
+
+  .row {
+    font-size: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+
+    label {
+      margin: 0;
+      line-height: 1;
+    }
+  }
+
+  .form-actions {
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+}

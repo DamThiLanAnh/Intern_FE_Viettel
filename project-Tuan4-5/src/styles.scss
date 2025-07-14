@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+// Base styles
+@use "./scss/base/reset";
+@use "./scss/base/variables";
+
+// Layouts
+@use "./scss/layout/container";
+@use "./scss/layout/left";
+@use "./scss/layout/right";
+@use "./scss/layout/container-wrapper";
+
+// Components
+@use "./scss/components/buttons";
+@use "./scss/components/forms";
+@use "./scss/components/language-select";

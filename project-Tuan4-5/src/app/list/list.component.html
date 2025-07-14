@@ -1,1 +1,43 @@
-<p>list works!</p>
+<nz-button nzType="primary" (click)="openAddModal()" class="mb-2">
+  Thêm người dùng
+</nz-button>
+
+<nz-table [nzData]="users" [nzBordered]="true" [nzSize]="'middle'" [nzPagination]="false">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Tên</th>
+      <th>Email</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <nz-button-group>
+          <button nz-button nzType="default" (click)="openEditModal(user)">Sửa</button>
+          <button nz-button nzType="default" nzDanger (click)="deleteUser(user.id)">Xóa</button>
+        </nz-button-group>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+
+<!-- Modal thêm/sửa -->
+<nz-modal
+  [(nzVisible)]="isModalVisible"
+  nzTitle="{{ editingUser ? 'Sửa người dùng' : 'Thêm người dùng' }}"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+>
+  <form *ngIf="editingUser !== null || editingUser === null">
+    <label>Tên:</label>
+    <input nz-input [(ngModel)]="editingUser.name" name="name" required />
+    <br /><br />
+    <label>Email:</label>
+    <input nz-input [(ngModel)]="editingUser.email" name="email" required />
+  </form>
+</nz-modal>
