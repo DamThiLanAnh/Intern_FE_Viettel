@@ -27,17 +27,13 @@
 </nz-table>
 
 <!-- Modal thêm/sửa -->
-<nz-modal
-  [(nzVisible)]="isModalVisible"
-  nzTitle="{{ editingUser ? 'Sửa người dùng' : 'Thêm người dùng' }}"
-  (nzOnCancel)="handleCancel()"
-  (nzOnOk)="handleOk()"
->
+<nz-modal [(nzVisible)]="isModalVisible" nzTitle="{{ editingUser ? 'Sửa người dùng' : 'Thêm người dùng' }}"
+  (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
   <form *ngIf="editingUser !== null || editingUser === null">
     <label>Tên:</label>
     <input nz-input [(ngModel)]="editingUser.name" name="name" required />
     <br /><br />
     <label>Email:</label>
-    <input nz-input [(ngModel)]="editingUser.email" name="email" required />
+    <input nz-input [(ngModel)]="editingUser?.email" name="email" required />
   </form>
 </nz-modal>
