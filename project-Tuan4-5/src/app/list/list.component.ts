@@ -17,11 +17,20 @@ export class ListComponent {
     { id: 2, name: 'Trần Thị B', email: 'b@gmail.com' },
   ];
 
-  editingUser: User | null = null;
+  editingUser = {
+    id: 0,
+    name: '',
+    email: ''
+  };
+
   isModalVisible = false;
 
   openAddModal() {
-    this.editingUser = null;
+    this.editingUser = {
+      id: 0,
+      name: '',
+      email: ''
+    };
     this.isModalVisible = true;
   }
 
