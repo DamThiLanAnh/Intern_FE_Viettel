@@ -1,0 +1,128 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    
+    img {
+        border-radius: 50%;
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.actions {
+    height: 100%;
+    
+
+    .notify {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .notify-icon {
+        position: relative;
+        margin-right: 24px;
+        font-size: 20px;
+        color: #AEB7D1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #EE0033;
+            border-radius: 50%;
+            top: 0;
+            right: 0;
+            border: 1px solid #fff;
+        }
+    }
+
+    .infor {
+        position: relative;
+        margin-right: 40px;
+        font-size: 14px;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+
+        & > img {
+            width: 35px;
+        }
+
+        .infor-detail {
+            display: grid;
+            grid-template-areas: 
+                "avatar name"
+                "avatar role";
+            align-items: center;
+            font-weight: 500;
+            padding: 0 24px;
+            margin-bottom: 16px;
+    
+            img {
+                grid-area: avatar;
+                width: 50px;
+                margin-right: 10px;
+            }
+    
+            .fullname {
+                grid-area: name;
+            }
+    
+            .role {
+                grid-area: role;
+                opacity: 0.5;
+            }
+        }
+
+        li {
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            gap: 10px;
+            color: #353B44;
+            cursor: pointer;
+            transition: all ease 0.2s;
+
+            &:hover {
+                color: #EE0033;
+                background-color: #EE00330D;
+            }
+        }
+    }
+}
+
+.notify-container {
+
+    .notify-title {
+        margin: 0 8px;
+        padding: 8px 0;
+        font-size: 14px;
+        border-bottom: 1px solid #AEB7D1;
+        margin-bottom: 12px;
+    }
+
+    .notify-content {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        width: 80%;
+    }
+}
+

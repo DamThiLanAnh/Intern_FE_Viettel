@@ -1,0 +1,26 @@
+.dropdown-container {
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: 0;
+    min-width: 220px;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    animation: ease FadeIn 0.2s; 
+    list-style: none;
+    padding: 16px 0 20px 0;
+    z-index: 999;
+
+    &.show {
+        display: block;
+    }
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

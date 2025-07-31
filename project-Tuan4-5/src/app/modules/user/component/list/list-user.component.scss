@@ -1,0 +1,113 @@
+.user-list-title {
+  margin-bottom: 24px;
+  color: #5680f9;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(86,128,249,0.10);
+  padding: 20px 28px;
+  margin-bottom: 18px;
+  transition: box-shadow 0.2s;
+  border: none;
+
+  &:hover {
+    box-shadow: 0 4px 24px rgba(86,128,249,0.18);
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  .user-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 24px;
+    border: 2.5px solid #e60023;
+    box-shadow: 0 2px 8px rgba(230,0,35,0.08);
+  }
+
+  .user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .user-name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #353B44;
+    letter-spacing: 0.5px;
+  }
+
+  .user-email {
+    margin: 0;
+    color: #8D99BB;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .edit-btn, .delete-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-left: 10px;
+    text-decoration: none;
+  }
+
+  .edit-btn {
+    background: #5680f9;
+    color: #fff;
+
+    &:hover {
+      background: #4667c9;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(86,128,249,0.15);
+    }
+  }
+
+  .delete-btn {
+    background: #e60023;
+    color: #fff;
+
+    &:hover {
+      background: #b8001b;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(230,0,35,0.15);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 10px;
+
+    .user-avatar {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+    .edit-btn, .delete-btn {
+      width: 100%;
+      margin: 8px 0 0 0;
+      justify-content: center;
+    }
+  }
+}

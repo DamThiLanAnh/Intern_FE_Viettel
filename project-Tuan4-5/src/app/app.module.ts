@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { ListComponent } from './list/list.component';
+import { LoginComponent } from './modules/auth/login/login.component';
+import { UserListComponent } from './modules/user/component/list/list-user.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
@@ -13,22 +12,19 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IconsProviderModule } from './icons-provider.module';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzTableModule } from 'ng-zorro-antd/table';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { UserCreateComponent } from './modules/user/component/create/create-user.component';
+import { UserEditComponent } from './modules/user/component/update/update-user.component';
 
 registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListComponent
+    UserListComponent,
+    UserCreateComponent,
+    UserEditComponent
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -38,18 +34,10 @@ registerLocaleData(en);
     RouterModule.forRoot([
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'list', component: ListComponent }
+      { path: 'list', component: UserListComponent }
     ]),
     HttpClientModule,
     BrowserAnimationsModule,
-    IconsProviderModule,
-    NzLayoutModule,
-    NzMenuModule,
-    NzTableModule,
-    NzButtonModule,
-    NzModalModule,
-    NzInputModule,
-    NzIconModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

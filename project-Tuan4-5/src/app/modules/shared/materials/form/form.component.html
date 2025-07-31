@@ -1,0 +1,50 @@
+<form class="user-form-container" action="" [formGroup]="formName">
+    <div class="col-half">
+        <div class="form-field" [class.error]="formName.get('first_name')?.errors && formName.get('first_name')?.touched">
+            <label for="">
+                Firstname
+                <span *ngIf="isRequired">*</span>
+            </label>
+            <div class="input-field">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" placeholder="First Name" formControlName="first_name">
+            </div>
+            <small *ngIf="formName.get('first_name')?.errors?.['required'] && formName.get('first_name')?.touched">
+                Vui lòng nhập trường này
+            </small>
+        </div>
+        <div class="form-field" [class.error]="formName.get('last_name')?.errors && formName.get('last_name')?.touched">
+            <label for="">
+                Lastname
+                <span *ngIf="isRequired">*</span>
+            </label>
+            <div class="input-field">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" placeholder="Last Name" formControlName="last_name">
+            </div>
+            <small *ngIf="formName.get('last_name')?.errors?.['required'] && formName.get('last_name')?.touched">
+                Vui lòng nhập trường này
+            </small>
+        </div>
+    </div>
+    <div class="form-field" [class.error]="formName.get('email')?.errors && formName.get('email')?.touched">
+        <label for="">
+            Email
+            <span *ngIf="isRequired">*</span>
+        </label>
+        <div class="input-field">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="text" placeholder="Email" formControlName="email">
+        </div>
+        <div *ngIf="formName.get('email')?.invalid && formName.get('email')?.touched">
+            <small *ngIf="formName.get('email')?.errors?.['required']">Vui lòng nhập trường này</small>
+            <small *ngIf="formName.get('email')?.errors?.['email']">Email không hợp lệ</small>
+        </div>
+    </div>
+    <div class="form-field">
+        <label for="">Mô tả</label>
+        <div class="input-field">
+            <textarea formControlName="desc" id=""></textarea>
+        </div>
+    </div>
+</form>

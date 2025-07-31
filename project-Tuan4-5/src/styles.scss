@@ -13,3 +13,5 @@
 @use "./scss/components/buttons";
 @use "./scss/components/forms";
 @use "./scss/components/language-select";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

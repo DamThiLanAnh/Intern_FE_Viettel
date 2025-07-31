@@ -1,0 +1,46 @@
+#layout-container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        "sidebar header header"
+        "sidebar content content"
+        "sidebar content content"
+        "sidebar content content";
+    grid-template-columns: 60px 5fr;
+    grid-template-rows: 50px 3fr 3fr 1fr;
+
+    layout-header {
+        grid-area: header;
+        text-align: center;
+        border-bottom: 1px solid #AEB7D1;
+    }
+
+    app-sidebar {
+        grid-area: sidebar;
+    }
+
+    app-content {
+        grid-area: content;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 100%;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #999;
+            border-radius: 4px;
+        }
+    }
+
+    app-footer {
+        grid-area: footer;
+        text-align: center;
+    }
+}

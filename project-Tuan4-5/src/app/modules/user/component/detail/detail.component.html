@@ -1,0 +1,65 @@
+    
+    <div class="user-detail-options">
+        
+        <mat-button 
+            label="Cập nhật"
+            icon="fa-solid fa-repeat"
+            (click)="updateUserModal.toggleModal()">
+        </mat-button>
+        <mat-button 
+            [isOutline]="true"
+            label="Xóa"
+            icon="fa-solid fa-trash"
+            (click)="deleteUserModal.toggleModal()">
+        </mat-button>
+    </div>
+    <div class="user-detail-container">
+        <div class="user-detail-images">
+            <div class="user-detail-background"></div>
+            <img class="user-detail-avatar" [src]="user.avatar" [alt]="user.last_name">
+        </div>
+        <div class="user-detail-infor">
+            <div class="user-infor-heading">
+                <div class="user-infor-name">
+                    <h1>{{ user.first_name }}</h1>
+                    <i class="user-infor-fullname">({{ user.first_name }} {{ user.last_name }})</i>
+                </div>
+                <p class="user-infor-email">📩 {{ user.email }}</p>
+            </div>
+            <p class="user-infor-desc" *ngIf="user.desc; else noDesc">{{ user.desc }}</p>
+            <ng-template #noDesc>
+                <p class="user-infor-desc">🧐 Hiện tại chưa có mô tả</p>
+            </ng-template>
+        </div>
+        <mat-modal #updateUserModal modalTitle="Cập nhật thông tin">
+            <update-user #updateUser [user]="user"></update-user>
+            <div class="user-detail-options">
+                <mat-button
+                    label="Hủy"
+                    [isOutline]="true"
+                    (clickEmitter)="updateUserModal.toggleModal()"
+                ></mat-button>
+                <mat-button
+                    label="Cập nhật"
+                    [disable]="updateUser.getForm().invalid"
+                    (clickEmitter)="updateUser.update()"
+                ></mat-button>
+            </div>
+        </mat-modal>
+        <mat-modal #deleteUserModal modalTitle="Xóa người dùng">
+            <p>Bạn có chắc chắn muốn xóa người dùng tên 
+                <b style="color: #EE0033">{{user.first_name}} {{user.last_name}}</b> 
+            không?</p>
+            <div class="user-detail-options">
+                <mat-button
+                    label="Hủy"
+                    [isOutline]="true"
+                    (clickEmitter)="deleteUserModal.toggleModal()"
+                ></mat-button>
+                <mat-button
+                    label="Đồng ý"
+                    (clickEmitter)="delete()"
+                ></mat-button>
+            </div>
+        </mat-modal>
+    </div>

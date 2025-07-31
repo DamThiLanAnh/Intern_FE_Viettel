@@ -1,0 +1,12 @@
+<div id="modal" #modal [class.show]="isShowModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>{{ modalTitle || 'Tiêu đề trống' }}</h3>
+            <i #close class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="modal-body">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
+

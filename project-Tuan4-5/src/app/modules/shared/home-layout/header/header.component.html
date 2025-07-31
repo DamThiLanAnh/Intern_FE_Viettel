@@ -1,0 +1,24 @@
+<div id="header">
+    <mat-button style="text-align: left;" label="Quay lại" icon="fa-solid fa-chevron-left" [onlyText]="true"
+        (clickEmitter)="goBack()">
+    </mat-button>
+    <div class="actions">
+        <div class="notify">
+            <i class="notify-icon fa-solid fa-bell"></i>
+        </div>
+        <div class="infor" (click)="dropdownUser.toggleDropdown()">
+            <img [src]="user.avatar" alt="">
+            <dropdown #dropdownUser>
+                <div class="infor-detail">
+                    <img [src]="user.avatar" [alt]="user.first_name">
+                    <p class="fullname">{{user.first_name}} {{ user.last_name }}</p>
+                    <p class="role">Admin</p>
+                </div>
+                <li #logOut>
+                    <i class="fa-regular fa-share-from-square"></i>
+                    Đăng xuất
+                </li>
+            </dropdown>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+@use '../../../../../scss/base/variables' as variables;
+// @use '../../../../animations';
+
+.error-notify {
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+    align-items: center;
+    box-shadow: 0 0 10px 4px rgba($color: variables.$primary-color, $alpha: 0.15);
+    animation: animations.$fadeIn ease 1s, animations.$slideOut linear 1s 1s forwards;
+
+    .error-icon {
+        font-size: 20px;
+        color: #fff;
+        padding: 16px 20px;
+        border: none;
+        box-shadow: 0 0 10px 4px rgba($color: variables.$primary-color, $alpha: 0.15);
+        cursor: pointer;
+    }
+
+    .error-title {
+        font-size: 16px;
+        margin-left: 16px;
+        font-weight: 600;
+        padding-right: 32px;
+    }
+
+    .error-close {
+        padding: 8px;
+        color: #ccc;
+        font-size: 16px;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+}
+
+.error-notify.warning,
+.error-notify.success,
+.error-notify.error {
+    opacity: 1;
+    display: flex;
+
+    &.hide {
+        display: none;
+    }
+}
+
+.error-notify.error {
+    .error-icon {
+        background-color: variables.$secondary-color;
+    }
+
+    .error-title {
+        color: variables.$secondary-color;
+    }
+}
+
+.error-notify.warning {
+    .error-icon {
+        background-color: variables.$bg-color;
+    }
+
+    .error-title {
+        color: variables.$yellow-color;
+    }
+}
+
+
+.error-notify.success {
+    animation: animations.$fadeIn ease 0.6s, animations.$slideOut linear 1s 3s forwards;
+
+    .error-icon {
+        background-color: variables.$green-color;
+    }
+
+    .error-title {
+        color: variables.$green-color;
+    }
+}

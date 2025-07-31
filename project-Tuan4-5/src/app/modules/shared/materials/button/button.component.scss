@@ -1,0 +1,39 @@
+@use '../../../../../scss/base/variables' as variables;
+
+
+button {
+    border: 1px solid variables.$secondary-color;
+    background-color: variables.$secondary-color;
+    padding: 8px 24px;
+    color: #333;
+    font-family: variables.$font-body;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all ease 0.3s;
+
+    i {
+        margin-right: 8px;
+    }
+
+    &.outline {
+        background-color: transparent;
+        color: variables.$secondary-color;
+    }
+
+    &.full-size {
+        width: 100%;
+    }
+
+    &.onlyText {
+        border: none;
+        background: none;
+        color: variables.$secondary-color;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
