@@ -6,12 +6,13 @@ import { UserListComponent } from './component/list/list-user.component';
 import { UserCreateComponent } from './component/create/create-user.component';
 import { UserEditComponent } from './component/update/update-user.component';
 import { UserRoutingModule } from './user-routing.module';
+import { UserDetailComponent } from './component/detail/detail.component';
 @NgModule({
     declarations: [
         UserListComponent,
         UserCreateComponent,
-        UserEditComponent
-        
+        UserEditComponent,
+        UserDetailComponent
     ],
     imports: [
         FormsModule,

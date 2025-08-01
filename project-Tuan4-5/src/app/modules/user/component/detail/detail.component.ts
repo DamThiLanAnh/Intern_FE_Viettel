@@ -11,7 +11,7 @@ import { UserService } from '../service/user-service.component';
     ]
 })
 
-export class FeatureUserDetailComp {
+export class UserDetailComponent {
     user!: any;
     constructor(
         private activeRouter: ActivatedRoute,

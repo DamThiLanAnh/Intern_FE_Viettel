@@ -1,44 +1,47 @@
-<div class="user-detail-options">
-
-  <mat-button label="Cập nhật" icon="fa-solid fa-repeat" (click)="updateUserModal.toggleModal()">
-  </mat-button>
-  <mat-button [isOutline]="true" label="Xóa" icon="fa-solid fa-trash" (click)="deleteUserModal.toggleModal()">
-  </mat-button>
-</div>
-<div class="user-detail-container">
-  <div class="user-detail-images">
-    <div class="user-detail-background"></div>
-    <img class="user-detail-avatar" [src]="user.avatar" [alt]="user.last_name">
+<div id="user-list">
+  <div class="user-list-options">
+    <h2>Danh sách người dùng</h2>
+    <mat-button label="Thêm mới" (clickEmitter)="createUserModal.toggleModal()" icon="fa-solid fa-plus"></mat-button>
   </div>
-  <div class="user-detail-infor">
-    <div class="user-infor-heading">
-      <div class="user-infor-name">
-        <h1>{{ user.first_name }}</h1>
-        <i class="user-infor-fullname">({{ user.first_name }} {{ user.last_name }})</i>
-      </div>
-      <p class="user-infor-email">📩 {{ user.email }}</p>
+  <div class="table-container">
+    <div class="table-heading">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th></th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </tr>
+      </table>
     </div>
-    <p class="user-infor-desc" *ngIf="user.desc; else noDesc">{{ user.desc }}</p>
-    <ng-template #noDesc>
-      <p class="user-infor-desc">🧐 Hiện tại chưa có mô tả</p>
-    </ng-template>
+    <div class="table-content">
+      <table *ngIf="lengthOfUsers > 0;else empty">
+        <tr *ngFor="let user of users; trackBy: trackByfn" (click)="showDetailUser(user.id)">
+          <td style="width: 20px;">{{ user.id }}</td>
+          <td>
+            <img [src]="user.avatar" alt="">
+          </td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.email }}</td>
+        </tr>
+      </table>
+      <ng-template #empty>
+        <div style="text-align: center; margin: 24px 0 36px 0;">
+          <img style="width: 200px;" src="../../../assets/img/forget.png" alt="">
+          <p style="margin-top: 8px; font-weight: 600;">Không có dữ liệu!</p>
+        </div>
+      </ng-template>
+    </div>
   </div>
-  <mat-modal #updateUserModal modalTitle="Cập nhật thông tin">
-    <update-user #updateUser [user]="user"></update-user>
+  <p class="user-list-counting">Tổng số<b style="color: #EE0033;"> {{ lengthOfUsers || '...' }} </b>người dùng</p>
+  <mat-modal #createUserModal modalTitle="Thêm người dùng mới">
+    <user-create #createForm></user-create>
     <div class="user-detail-options">
-      <mat-button label="Hủy" [isOutline]="true" (clickEmitter)="updateUserModal.toggleModal()"></mat-button>
-      <mat-button label="Cập nhật" [disable]="updateUser.getForm().invalid"
-        (clickEmitter)="updateUser.update()"></mat-button>
-    </div>
-  </mat-modal>
-  <mat-modal #deleteUserModal modalTitle="Xóa người dùng">
-    <p>Bạn có chắc chắn muốn xóa người dùng tên
-      <b style="color: #EE0033">{{user.first_name}} {{user.last_name}}</b>
-      không?
-    </p>
-    <div class="user-detail-options">
-      <mat-button label="Hủy" [isOutline]="true" (clickEmitter)="deleteUserModal.toggleModal()"></mat-button>
-      <mat-button label="Đồng ý" (clickEmitter)="delete()"></mat-button>
+      <mat-button label="Hủy" [isOutline]="true" (clickEmitter)="createUserModal.toggleModal()"></mat-button>
+      <mat-button label="Đồng ý" [disable]="createForm.getForm().invalid"
+        (clickEmitter)="createForm.create()"></mat-button>
     </div>
   </mat-modal>
 </div>
